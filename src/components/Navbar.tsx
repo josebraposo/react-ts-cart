@@ -10,7 +10,7 @@ export function Navbar() {
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         <Button
-          onClick={() => {}}
+          onClick={() => alert('clicked')}
           style={{ width: "3rem", height: "3rem", position: "relative" }}
           variant="outline-primary"
           className="rounded-circle"
