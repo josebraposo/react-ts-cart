@@ -1,6 +1,8 @@
 import { Container, Nav, Navbar as NavbarBs, Button } from "react-bootstrap";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export function Navbar() {
+  const { openCart, cartQuantity } = useShoppingCart();
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
@@ -10,7 +12,7 @@ export function Navbar() {
           <Nav.Link href="/about">About</Nav.Link>
         </Nav>
         <Button
-          onClick={() => alert('clicked')}
+          onClick={openCart}
           style={{ width: "3rem", height: "3rem", position: "relative" }}
           variant="outline-primary"
           className="rounded-circle"
@@ -35,7 +37,7 @@ export function Navbar() {
               transform: "translate(25%, 25%)",
             }}
           >
-            4
+            {cartQuantity}
           </div>
         </Button>
       </Container>
