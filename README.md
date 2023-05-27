@@ -1,1 +1,1 @@
-# cart-react-ts
+# react-ts-cart
