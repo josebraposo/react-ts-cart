@@ -40,24 +40,24 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
             </Button>
           ) : (
             <div
-              className="d-flex align-items-center flex-column"
+              className="d-flex justify-content-between"
               style={{ gap: ".5rem" }}
             >
-              <div
-                className="d-flex align-items-center justify-content-center"
-                style={{ gap: ".5rem" }}
-              >
-                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-                <span className="fs-3">{quantity} in cart</span>
-                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
-              </div>
               <Button
                 variant="danger"
                 size="sm"
                 onClick={() => removeFromCart(id)}
               >
-                Remove
+                Remove all
               </Button>
+              <div
+                className="d-flex align-items-center justify-content-center"
+                style={{ gap: ".5rem" }}
+              >
+                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
+                <span className="fs-6">{quantity} in cart</span>
+                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+              </div>
             </div>
           )}
         </div>
