@@ -1,8 +1,9 @@
 import { Container, Nav, Navbar as NavbarBs, Button } from "react-bootstrap";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { useContext } from "react";
 
 export function Navbar() {
-  const { openCart, cartQuantity } = useShoppingCart();
+  const { openCart, cartQuantity } = useContext(ShoppingCartContext);
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
