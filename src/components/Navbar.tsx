@@ -1,16 +1,37 @@
 import { Container, Nav, Navbar as NavbarBs, Button } from "react-bootstrap";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 
 export function Navbar() {
   const { openCart, cartQuantity } = useContext(ShoppingCartContext);
+  const currPath = useLocation()?.pathname;
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/store">Store</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link
+            href="/"
+            style={{ textDecoration: currPath === "/" ? "underline" : "none" }}
+          >
+            Home
+          </Nav.Link>
+          <Nav.Link
+            href="/store"
+            style={{
+              textDecoration: currPath === "/store" ? "underline" : "none",
+            }}
+          >
+            Store
+          </Nav.Link>
+          <Nav.Link
+            href="/about"
+            style={{
+              textDecoration: currPath === "/about" ? "underline" : "none",
+            }}
+          >
+            About
+          </Nav.Link>
         </Nav>
         <Button
           onClick={openCart}
