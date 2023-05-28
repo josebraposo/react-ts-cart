@@ -2,6 +2,7 @@
   "name": "react-ts-cart",
   "private": true,
   "version": "0.0.0",
+  "homepage": "/react-ts-cart",
   "type": "module",
   "scripts": {
     "dev": "vite",
