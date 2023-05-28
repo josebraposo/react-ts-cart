@@ -44,9 +44,10 @@ jobs:
         # which is the case if we use React Router (with browserHistory)
         # or other routers that use HTML5 pushState history API under the hood.
         # example.com/route always returns a 404 page.
-        # A fast workaround is to make this 404 redirect hit a
-        # clone of our index.html in a 404.html file.
+        # A quick workaround is to make this 404 redirect hit a
+        # clone of your index.html in a 404.html file.
         # The script is basically "cp dist/index.html dist/404.html"
+        # More info at https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
       - name: Clone index.html to 404.html for SPAs in GitHub Pages
         run: npm run cloneIndexTo404
       - name: Setup Pages
