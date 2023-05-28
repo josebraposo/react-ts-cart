@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Workflow for deploying static content to GitHub Pages (targets build in ./dist folder)
 name: Deploy to Pages
 
 on:
@@ -39,12 +39,22 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        # Optional for SPA (e.g. React app built with React Router).
+        # GitHub Pages doesn't natively support single page apps,
+        # which is the case if we use React Router (with browserHistory)
+        # or other routers that use HTML5 pushState history API under the hood.
+        # example.com/route always returns a 404 page.
+        # A fast workaround is to make this 404 redirect hit a
+        # clone of our index.html in a 404.html file.
+        # The script is basically "cp dist/index.html dist/404.html"
+      - name: Clone index.html to 404.html for SPAs in GitHub Pages
+        run: npm run cloneIndexTo404
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload dist repository
+          # Upload build created in dist folder
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
