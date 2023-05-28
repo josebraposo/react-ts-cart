@@ -7,6 +7,7 @@ export function Navbar() {
   const { openCart, cartQuantity } = useContext(ShoppingCartContext);
   const currPath = useLocation()?.pathname;
   const base = import.meta.env.BASE_URL;
+  console.log("log location:", useLocation());
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
