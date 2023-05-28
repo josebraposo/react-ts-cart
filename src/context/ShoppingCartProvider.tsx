@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart } from "../ShoppingCart";
+import { ShoppingCart } from "../components/ShoppingCart";
 import {
   ShoppingCartProviderProps,
   CartItem,
