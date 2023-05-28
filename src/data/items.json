@@ -1,26 +1,38 @@
 [
     {
       "id": 1,
-      "name": "Book",
-      "price": 10.99,
-      "imgUrl": "./imgs/book.jpg"
+      "name": "Mouse",
+      "price": 74.90,
+      "imgUrl": "./imgs/mouse.jpg"
     },
     {
       "id": 2,
-      "name": "Computer",
-      "price": 1199,
-      "imgUrl": "./imgs/computer.jpg"
+      "name": "Keyboard",
+      "price": 129.90,
+      "imgUrl": "./imgs/keyboard.jpg"
     },
     {
       "id": 3,
-      "name": "Banana",
-      "price": 1.05,
-      "imgUrl": "./imgs/banana.jpg"
+      "name": "Gamepad",
+      "price": 39.99,
+      "imgUrl": "./imgs/gamepad.jpg"
     },
     {
       "id": 4,
-      "name": "Car",
-      "price": 14000,
-      "imgUrl": "./imgs/car.jpg"
+      "name": "Headphones",
+      "price": 45.50,
+      "imgUrl": "./imgs/headphones.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Earphones",
+      "price": 89.90,
+      "imgUrl": "./imgs/earphones.jpg"
+    },
+    {
+      "id": 6,
+      "name": "USB Hub",
+      "price": 24.90,
+      "imgUrl": "./imgs/hub.jpg"
     }
   ]
