@@ -13,13 +13,13 @@ export function Navbar() {
       <Container>
         <Nav className="me-auto">
           <Nav.Link
-            href={`${base}/`}
+            href={`${base}`}
             style={{ textDecoration: currPath === "/" ? "underline" : "none" }}
           >
             Home
           </Nav.Link>
           <Nav.Link
-            href={`${base}/store`}
+            href={`${base}store`}
             style={{
               textDecoration: currPath === "/store" ? "underline" : "none",
             }}
@@ -27,7 +27,7 @@ export function Navbar() {
             Store
           </Nav.Link>
           <Nav.Link
-            href={`${base}/about`}
+            href={`${base}about`}
             style={{
               textDecoration: currPath === "/about" ? "underline" : "none",
             }}
