@@ -20,7 +20,7 @@ export function Navbar() {
   const { openCart, cartQuantity } = useContext(ShoppingCartContext);
   const path = useLocation()?.pathname;
   return (
-    <NavbarBs className="bg-white shadow-sm mb-3">
+    <NavbarBs className="bg-white shadow-sm mb-3" sticky="top">
       <Container>
         <Nav className="me-auto">
           <Nav.Link {...buildLinkProps(path, "/")}>Store</Nav.Link>
