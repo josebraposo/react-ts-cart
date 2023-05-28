@@ -4,11 +4,11 @@ import App from './App.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom'
 
-const base = import.meta.env.BASE_URL;
+const baseURL = import.meta.env.BASE_URL; // configured on vite.config.ts
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename={base}>
+    <BrowserRouter basename={baseURL}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
