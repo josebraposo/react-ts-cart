@@ -6,18 +6,19 @@ import { useLocation } from "react-router-dom";
 export function Navbar() {
   const { openCart, cartQuantity } = useContext(ShoppingCartContext);
   const currPath = useLocation()?.pathname;
+  const base = import.meta.env.BASE_URL;
   return (
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto">
           <Nav.Link
-            href="/"
+            href={`${base}/`}
             style={{ textDecoration: currPath === "/" ? "underline" : "none" }}
           >
             Home
           </Nav.Link>
           <Nav.Link
-            href="/store"
+            href={`${base}/store`}
             style={{
               textDecoration: currPath === "/store" ? "underline" : "none",
             }}
@@ -25,7 +26,7 @@ export function Navbar() {
             Store
           </Nav.Link>
           <Nav.Link
-            href="/about"
+            href={`${base}/about`}
             style={{
               textDecoration: currPath === "/about" ? "underline" : "none",
             }}
