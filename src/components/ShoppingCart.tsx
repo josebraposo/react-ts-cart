@@ -1,9 +1,19 @@
 import { Offcanvas, Stack } from "react-bootstrap";
-import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import {
+  CartItem as CartItemType,
+  ShoppingCartContext,
+} from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import { useContext } from "react";
 import { formatCurrency } from "../utilities/formatCurrency";
 import storeItems from "../data/items.json";
+
+function getTotalPrice(cartItems: CartItemType[]): number {
+  return cartItems.reduce((total, cartItem) => {
+    const item = storeItems.find((jsonItem) => jsonItem.id === cartItem.id);
+    return (total = total + (item?.price || 0) * cartItem.quantity);
+  }, 0);
+}
 
 export function ShoppingCart() {
   const { closeCart, isOpen, cartItems } = useContext(ShoppingCartContext);
@@ -19,16 +29,8 @@ export function ShoppingCart() {
           ))}
         </Stack>
         <p className="text-end fw-bold fs-5">
-            Total:{" "}
-            {formatCurrency(
-              cartItems.reduce((total, cartItem) => {
-                const item = storeItems.find(
-                  (jsonItem) => jsonItem.id === cartItem.id
-                );
-                return (total = total + (item?.price || 0) * cartItem.quantity);
-              }, 0)
-            )}
-          </p>
+          Total: {formatCurrency(getTotalPrice(cartItems))}
+        </p>
       </Offcanvas.Body>
     </Offcanvas>
   );

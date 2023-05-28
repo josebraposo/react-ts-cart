@@ -20,12 +20,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     "shopping-cart",
     []
   );
-
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   );
-
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
 
