@@ -7,6 +7,13 @@ import {
 } from "./ShoppingCartContext";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
+/*
+ * Context and Provider are in separate files, otherwise
+ * Hot Module Replacement (HMR) vite plugin will crash the app
+ * on hot reloads since context gets default value for all useContext calls
+ * Issue: https://github.com/vitejs/vite/issues/3301
+ */
+
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
