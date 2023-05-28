@@ -47,7 +47,8 @@ jobs:
         # A quick workaround is to make this 404 redirect hit a
         # clone of your index.html in a 404.html file.
         # The script is basically "cp dist/index.html dist/404.html"
-        # More info at https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
+        # Another solution is to use somethig with hash routing, like
+        # what react-router-dom offers with HashRouter.
       - name: Clone index.html to 404.html for SPAs in GitHub Pages
         run: npm run cloneIndexTo404
       - name: Setup Pages
