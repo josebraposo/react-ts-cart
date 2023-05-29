@@ -1,9 +1,9 @@
 import { Button, Stack } from "react-bootstrap";
-import { ShoppingCartContext } from "../context/ShoppingCartContext";
-import storeItems from "../data/items.json";
+import { ShoppingCartContext } from "../../context/ShoppingCartContext";
+import storeItems from "../../data/items.json";
 import { useContext } from "react";
-import { formatCurrency } from "../utilities/formatCurrency";
-import { TrashSvg } from "../assets/TrashSvg";
+import { formatCurrency } from "../../utilities/formatCurrency";
+import { TrashSvg } from "../../assets/TrashSvg";
 
 type CartItemProps = {
   id: number;

@@ -1,8 +1,8 @@
 import { Container, Nav, Navbar as NavbarBs } from "react-bootstrap";
-import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { getBaseUrl } from "../utilities/getBaseUrl";
+import { getBaseUrl } from "../../utilities/getBaseUrl";
 import { CartButton } from "./CartButton";
 
 function buildLinkProps(path: string, route: string) {

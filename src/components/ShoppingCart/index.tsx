@@ -2,11 +2,11 @@ import { Offcanvas, Stack } from "react-bootstrap";
 import {
   CartItem as CartItemType,
   ShoppingCartContext,
-} from "../context/ShoppingCartContext";
+} from "../../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import { useContext } from "react";
-import { formatCurrency } from "../utilities/formatCurrency";
-import storeItems from "../data/items.json";
+import { formatCurrency } from "../../utilities/formatCurrency";
+import storeItems from "../../data/items.json";
 
 function getTotalPrice(cartItems: CartItemType[]): number {
   return cartItems.reduce((total, cartItem) => {

@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import { CartSvg } from "../assets/CartSvg";
+import { CartSvg } from "../../assets/CartSvg";
 import { useEffect, useState } from "react";
 
 type CartButtonProps = {
