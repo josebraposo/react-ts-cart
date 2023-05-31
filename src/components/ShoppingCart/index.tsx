@@ -4,7 +4,7 @@ import {
   ShoppingCartContext,
 } from "../../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import storeItems from "../../data/items.json";
 
@@ -17,6 +17,7 @@ function getTotalPrice(cartItems: CartItemType[]): number {
 
 export function ShoppingCart() {
   const { closeCart, isOpen, cartItems } = useContext(ShoppingCartContext);
+  const totalPrice = useMemo(() => getTotalPrice(cartItems), [cartItems]);
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>
@@ -29,7 +30,7 @@ export function ShoppingCart() {
           ))}
         </Stack>
         <p className="text-end fw-bold fs-5">
-          Total: {formatCurrency(getTotalPrice(cartItems))}
+          Total: {formatCurrency(totalPrice)}
         </p>
       </Offcanvas.Body>
     </Offcanvas>
