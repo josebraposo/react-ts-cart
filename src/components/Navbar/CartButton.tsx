@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import { CartSvg } from "../../assets/CartSvg";
 import { useEffect, useState } from "react";
+import { useFirstRender } from "../../hooks/useFirstRender";
 
 type CartButtonProps = {
   openCart: () => void;
@@ -9,18 +10,16 @@ type CartButtonProps = {
 
 export function CartButton({ openCart, cartQuantity }: CartButtonProps) {
   const [isAnimating, setIsAnimating] = useState(false);
-  const [lastAnimatedQuantity, setlastAnimatedQuantity] =
-    useState(cartQuantity);
+  const firstRender = useFirstRender();
 
   useEffect(() => {
-    if (cartQuantity !== lastAnimatedQuantity && !isAnimating) {
+    if (!firstRender) {
       setIsAnimating(true);
       setTimeout(() => {
         setIsAnimating(false);
-        setlastAnimatedQuantity(cartQuantity);
-      }, 300);
+      }, 150);
     }
-  }, [cartQuantity, lastAnimatedQuantity, isAnimating]);
+  }, [firstRender, cartQuantity]);
 
   return (
     <Button
@@ -44,7 +43,7 @@ export function CartButton({ openCart, cartQuantity }: CartButtonProps) {
           bottom: 0,
           right: 0,
           transition: "transform 0.25s ease-in-out",
-          transform: isAnimating ? "scale(1.4)" : "scale(1)",
+          transform: isAnimating ? "scale(1.5)" : "scale(1)",
         }}
       >
         {cartQuantity}
